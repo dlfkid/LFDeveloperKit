@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *currentDeveloper;
 @property (nonatomic, assign, readonly) BOOL isDeveloper;
+@property (nonatomic, assign, getter = isCrashAlert) BOOL crashAlert;
 
 + (instancetype)sharedInstance;
 
