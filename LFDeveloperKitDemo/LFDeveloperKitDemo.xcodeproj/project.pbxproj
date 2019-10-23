@@ -16,6 +16,7 @@
 		35A9287C233E02C4007BE488 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9287B233E02C4007BE488 /* main.m */; };
 		35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92883233E02D7007BE488 /* LFDeveloperKit.m */; };
 		B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */; };
+		B4FADEC22360B133000E8ED2 /* UIAlertController+CrashAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		35A92883233E02D7007BE488 /* LFDeveloperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDeveloperKit.m; sourceTree = "<group>"; };
 		B4FADEBC235DB44A000E8ED2 /* NSObject+HookExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HookExtension.h"; sourceTree = "<group>"; };
 		B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HookExtension.m"; sourceTree = "<group>"; };
+		B4FADEC02360B133000E8ED2 /* UIAlertController+CrashAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CrashAlert.h"; sourceTree = "<group>"; };
+		B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CrashAlert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			children = (
 				B4FADEBC235DB44A000E8ED2 /* NSObject+HookExtension.h */,
 				B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */,
+				B4FADEC02360B133000E8ED2 /* UIAlertController+CrashAlert.h */,
+				B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				35A92871233E02C3007BE488 /* ViewController.m in Sources */,
 				35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */,
 				35A9287C233E02C4007BE488 /* main.m in Sources */,
+				B4FADEC22360B133000E8ED2 /* UIAlertController+CrashAlert.m in Sources */,
 				35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

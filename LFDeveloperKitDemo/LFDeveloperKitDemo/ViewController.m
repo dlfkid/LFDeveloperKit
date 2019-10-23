@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "UIAlertController+CrashAlert.h"
+
 @interface ViewController ()
 
 @end
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [UIAlertController showCrashAlertWithTitle:@"test" Message:@"test message"];
 }
 
 
