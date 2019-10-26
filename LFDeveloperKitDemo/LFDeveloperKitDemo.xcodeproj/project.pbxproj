@@ -17,6 +17,7 @@
 		35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92883233E02D7007BE488 /* LFDeveloperKit.m */; };
 		B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */; };
 		B4FADEC22360B133000E8ED2 /* UIAlertController+CrashAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */; };
+		B4FADEC52364BB39000E8ED2 /* NSDictionary+ShadowArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEC42364BB39000E8ED2 /* NSDictionary+ShadowArchive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HookExtension.m"; sourceTree = "<group>"; };
 		B4FADEC02360B133000E8ED2 /* UIAlertController+CrashAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CrashAlert.h"; sourceTree = "<group>"; };
 		B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CrashAlert.m"; sourceTree = "<group>"; };
+		B4FADEC32364BB39000E8ED2 /* NSDictionary+ShadowArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ShadowArchive.h"; sourceTree = "<group>"; };
+		B4FADEC42364BB39000E8ED2 /* NSDictionary+ShadowArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ShadowArchive.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */,
 				B4FADEC02360B133000E8ED2 /* UIAlertController+CrashAlert.h */,
 				B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */,
+				B4FADEC32364BB39000E8ED2 /* NSDictionary+ShadowArchive.h */,
+				B4FADEC42364BB39000E8ED2 /* NSDictionary+ShadowArchive.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */,
+				B4FADEC52364BB39000E8ED2 /* NSDictionary+ShadowArchive.m in Sources */,
 				35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */,
 				35A92871233E02C3007BE488 /* ViewController.m in Sources */,
 				35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */,
