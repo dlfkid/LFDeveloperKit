@@ -8,7 +8,11 @@
 
 #import "AppDelegate.h"
 
+#import "LFLogger.h"
+
 @interface AppDelegate ()
+
+@property (nonatomic, strong) LFLogger *logger;
 
 @end
 
@@ -17,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.logger = [[LFLogger alloc] initWithLogLevel:LFLogLevelDebug Identifier:@"test"];
     return YES;
 }
 

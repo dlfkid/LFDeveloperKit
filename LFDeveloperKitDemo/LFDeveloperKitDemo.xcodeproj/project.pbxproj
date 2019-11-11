@@ -15,9 +15,9 @@
 		35A92879233E02C4007BE488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A92877233E02C4007BE488 /* LaunchScreen.storyboard */; };
 		35A9287C233E02C4007BE488 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9287B233E02C4007BE488 /* main.m */; };
 		35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92883233E02D7007BE488 /* LFDeveloperKit.m */; };
+		35F345042373B5B700FAED4C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F345022373B58C00FAED4C /* libsqlite3.0.tbd */; };
 		B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */; };
 		B4FADEC22360B133000E8ED2 /* UIAlertController+CrashAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */; };
-		B4FADEC52364BB39000E8ED2 /* NSDictionary+ShadowArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEC42364BB39000E8ED2 /* NSDictionary+ShadowArchive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +35,11 @@
 		35A9287B233E02C4007BE488 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		35A92882233E02D7007BE488 /* LFDeveloperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDeveloperKit.h; sourceTree = "<group>"; };
 		35A92883233E02D7007BE488 /* LFDeveloperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDeveloperKit.m; sourceTree = "<group>"; };
+		35F345022373B58C00FAED4C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		B4FADEBC235DB44A000E8ED2 /* NSObject+HookExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HookExtension.h"; sourceTree = "<group>"; };
 		B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HookExtension.m"; sourceTree = "<group>"; };
 		B4FADEC02360B133000E8ED2 /* UIAlertController+CrashAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CrashAlert.h"; sourceTree = "<group>"; };
 		B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CrashAlert.m"; sourceTree = "<group>"; };
-		B4FADEC32364BB39000E8ED2 /* NSDictionary+ShadowArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ShadowArchive.h"; sourceTree = "<group>"; };
-		B4FADEC42364BB39000E8ED2 /* NSDictionary+ShadowArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ShadowArchive.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35F345042373B5B700FAED4C /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +59,7 @@
 			children = (
 				35A92868233E02C3007BE488 /* LFDeveloperKitDemo */,
 				35A92867233E02C3007BE488 /* Products */,
+				35F345012373B58C00FAED4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +80,7 @@
 				35A9286D233E02C3007BE488 /* SceneDelegate.m */,
 				35A9286F233E02C3007BE488 /* ViewController.h */,
 				35A92870233E02C3007BE488 /* ViewController.m */,
+				35F345082373CB2700FAED4C /* LFLogger */,
 				35A92885233E02DD007BE488 /* LFDeveloperKit */,
 				35A92872233E02C3007BE488 /* Main.storyboard */,
 				35A92875233E02C4007BE488 /* Assets.xcassets */,
@@ -99,6 +101,21 @@
 			path = LFDeveloperKit;
 			sourceTree = "<group>";
 		};
+		35F345012373B58C00FAED4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35F345022373B58C00FAED4C /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35F345082373CB2700FAED4C /* LFLogger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LFLogger;
+			sourceTree = "<group>";
+		};
 		B4FADEBF235DB450000E8ED2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +123,6 @@
 				B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */,
 				B4FADEC02360B133000E8ED2 /* UIAlertController+CrashAlert.h */,
 				B4FADEC12360B133000E8ED2 /* UIAlertController+CrashAlert.m */,
-				B4FADEC32364BB39000E8ED2 /* NSDictionary+ShadowArchive.h */,
-				B4FADEC42364BB39000E8ED2 /* NSDictionary+ShadowArchive.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */,
-				B4FADEC52364BB39000E8ED2 /* NSDictionary+ShadowArchive.m in Sources */,
 				35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */,
 				35A92871233E02C3007BE488 /* ViewController.m in Sources */,
 				35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */,

@@ -22,7 +22,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [UIAlertController showCrashAlertWithTitle:@"test" Message:@"test message"];
+    
 }
 
 
