@@ -12,21 +12,6 @@
 
 @implementation NSObject (HookExtension)
 
-- (DeallocHandlerBlock)deallocHandler {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)setDeallocHandler:(DeallocHandlerBlock)deallocHandler {
-    objc_setAssociatedObject(self, _cmd, deallocHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-- (void)dealloc {
-    !self.deallocHandler ?: self.deallocHandler(self);
-}
-#pragma clang dianostic pop
-
 + (BOOL)isContainSEL:(SEL)selector {
     unsigned int count;
     Method *methodList = class_copyMethodList(self,&count);

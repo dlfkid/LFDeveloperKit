@@ -8,19 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+@class LFDeveloper;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFDeveloperKit : NSObject
 
-@property (nonatomic, strong) NSString *currentDeveloper;
-@property (nonatomic, assign, readonly) BOOL isDeveloper;
-@property (nonatomic, assign, getter = isCrashAlert) BOOL crashAlert;
+/// Saved developerDictionary
+@property (nonatomic, strong, readonly) NSDictionary <NSString *, LFDeveloper *> *developerList;
 
 + (instancetype)sharedInstance;
 
-- (void)registerDevelopers:(NSArray <NSString *> *)developerIdentifiers;
+/// Write a new or exist developer
+/// @param developer develoeprModel
+- (void)saveDeveloper:(LFDeveloper *)developer;
 
+/// remove a developer from the list
+/// @param developer developer
+- (void)removeDeveloperWithDeveloper:(LFDeveloper *)developer;
 
+- (void)clearAllDevelopers;
 
 @end
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356C46DE23F691B1004DADD5 /* LFDeveloper.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46DD23F691B1004DADD5 /* LFDeveloper.m */; };
 		35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286A233E02C3007BE488 /* AppDelegate.m */; };
 		35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286D233E02C3007BE488 /* SceneDelegate.m */; };
 		35A92871233E02C3007BE488 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92870233E02C3007BE488 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		356C46DC23F691B1004DADD5 /* LFDeveloper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDeveloper.h; sourceTree = "<group>"; };
+		356C46DD23F691B1004DADD5 /* LFDeveloper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDeveloper.m; sourceTree = "<group>"; };
 		35A92866233E02C3007BE488 /* LFDeveloperKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFDeveloperKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A92869233E02C3007BE488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35A9286A233E02C3007BE488 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 			children = (
 				35A92882233E02D7007BE488 /* LFDeveloperKit.h */,
 				35A92883233E02D7007BE488 /* LFDeveloperKit.m */,
+				356C46DC23F691B1004DADD5 /* LFDeveloper.h */,
+				356C46DD23F691B1004DADD5 /* LFDeveloper.m */,
 				B4FADEBF235DB450000E8ED2 /* Extension */,
 			);
 			path = LFDeveloperKit;
@@ -197,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356C46DE23F691B1004DADD5 /* LFDeveloper.m in Sources */,
 				B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */,
 				35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */,
 				35A92871233E02C3007BE488 /* ViewController.m in Sources */,
@@ -346,6 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VSH7W5Y66V;
 				INFOPLIST_FILE = LFDeveloperKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VSH7W5Y66V;
 				INFOPLIST_FILE = LFDeveloperKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

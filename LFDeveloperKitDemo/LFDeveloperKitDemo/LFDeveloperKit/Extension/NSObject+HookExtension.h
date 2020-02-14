@@ -16,8 +16,6 @@ typedef void(^DeallocHandlerBlock)(NSObject *object);
 
 @interface NSObject (HookExtension)
 
-@property (nonatomic, copy) DeallocHandlerBlock deallocHandler;
-
 /**
  判断当前类有没有包含某方法
 

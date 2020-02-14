@@ -8,9 +8,11 @@
 
 #import "LFDeveloperKit.h"
 
+#import "LFDeveloper.h"
+
 @interface LFDeveloperKit()
 
-@property (nonatomic, strong) NSArray <NSString *> *developerIDs;
+@property (nonatomic, strong) NSDictionary <NSString *, LFDeveloper *> *developerList;
 
 @end
 
@@ -19,6 +21,16 @@ static LFDeveloperKit *_sharedInstance;
 
 @implementation LFDeveloperKit
 
+#pragma mark - Private
+
+- (NSString *)archivePath {
+    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *filePath = [sandBoxPath stringByAppendingPathComponent:@"LFDeveloper.data"];
+    return filePath;
+}
+
+#pragma mark - Public
+
 + (instancetype)sharedInstance {
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[LFDeveloperKit alloc] init];
@@ -26,17 +38,57 @@ static LFDeveloperKit *_sharedInstance;
     return _sharedInstance;
 }
 
-- (void)registerDevelopers:(NSArray<NSString *> *)developerIdentifiers {
-    _developerIDs = developerIdentifiers;
+- (void)saveDeveloper:(LFDeveloper *)developer {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:self.developerList];
+    if (!dict) {
+        dict = [NSMutableDictionary dictionary];
+    }
+    [dict setObject:developer forKey:developer.identifier];
+    if (@available(iOS 11.0, *)) {
+        NSError *saveError = nil;
+        NSData *encrpytData = [NSKeyedArchiver archivedDataWithRootObject:dict requiringSecureCoding:YES error:&saveError];
+        [NSKeyedArchiver archiveRootObject:encrpytData toFile:[self archivePath]];
+    } else {
+        NSData *encrpytData = [NSKeyedArchiver archivedDataWithRootObject:dict];
+        [NSKeyedArchiver archiveRootObject:encrpytData toFile:[self archivePath]];
+    }
 }
 
-- (BOOL)isDeveloper {
-    for (NSString *developerID in self.developerIDs) {
-        if ([self.currentDeveloper isEqualToString:developerID]) {
-            return YES;
+- (void)removeDeveloperWithDeveloper:(LFDeveloper *)developer {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:self.developerList];
+    [dict removeObjectForKey:developer.identifier];
+    if (@available(iOS 11.0, *)) {
+        NSError *saveError = nil;
+        NSData *encrpytData = [NSKeyedArchiver archivedDataWithRootObject:dict requiringSecureCoding:YES error:&saveError];
+        [NSKeyedArchiver archiveRootObject:encrpytData toFile:[self archivePath]];
+    } else {
+        NSData *encrpytData = [NSKeyedArchiver archivedDataWithRootObject:dict];
+        [NSKeyedArchiver archiveRootObject:encrpytData toFile:[self archivePath]];
+    }
+}
+
+- (void)clearAllDevelopers {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:[self archivePath]]) {
+        NSError *error = nil;
+        [manager removeItemAtPath:[self archivePath] error:&error];
+    }
+}
+
+#pragma mark - LazyLoads
+
+- (NSDictionary *)developerList {
+    if (!_developerList) {
+        NSData *encryptData = [NSKeyedUnarchiver unarchiveObjectWithFile:[self archivePath]];
+        NSError *loadError = nil;
+        if (@available(iOS 11.0, *)) {
+            _developerList = [NSKeyedUnarchiver unarchiveTopLevelObjectWithData:encryptData error:&loadError];
+        } else {
+            // Fallback on earlier versions
+            _developerList = [NSKeyedUnarchiver unarchiveObjectWithData:encryptData];
         }
     }
-    return NO;
+    return _developerList;
 }
 
 @end
