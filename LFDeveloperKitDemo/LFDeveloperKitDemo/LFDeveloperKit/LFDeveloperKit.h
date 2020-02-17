@@ -12,10 +12,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol LFDeveloperKitDelegate <NSObject>
+
+- (void)lf_logFormattedMessage:(NSString *)message;
+
+@end
+
 @interface LFDeveloperKit : NSObject
 
 /// Saved developerDictionary
 @property (nonatomic, strong, readonly) NSDictionary <NSString *, LFDeveloper *> *developerList;
+
+@property (nonatomic, weak) id <LFDeveloperKitDelegate> delegate;
 
 + (instancetype)sharedInstance;
 
@@ -28,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeDeveloperWithDeveloper:(LFDeveloper *)developer;
 
 - (void)clearAllDevelopers;
+
+- (void)printLogWithFormat:(NSString *)formattedLog, ... NS_FORMAT_FUNCTION(1, 2);
 
 @end
 

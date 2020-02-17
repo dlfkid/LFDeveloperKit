@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 
-#import "UIAlertController+CrashAlert.h"
-
 @interface ViewController ()
 
 @end

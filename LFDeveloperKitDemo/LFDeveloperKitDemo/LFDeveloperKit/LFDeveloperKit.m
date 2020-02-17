@@ -38,6 +38,16 @@ static LFDeveloperKit *_sharedInstance;
     return _sharedInstance;
 }
 
+- (void)printLogWithFormat:(NSString *)formattedLog, ... {
+    if ([self.delegate respondsToSelector:@selector(lf_logFormattedMessage:)]) {
+        va_list args;
+        va_start(args, formattedLog);
+        NSString *rst = [[NSString alloc] initWithFormat:formattedLog arguments:args];
+        va_end(args);
+        [self.delegate lf_logFormattedMessage:rst];
+    }
+}
+
 - (void)saveDeveloper:(LFDeveloper *)developer {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:self.developerList];
     if (!dict) {
