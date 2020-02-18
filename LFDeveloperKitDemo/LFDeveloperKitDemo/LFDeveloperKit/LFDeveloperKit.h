@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define LFSharedKit [LFDeveloperKit sharedInstance]
+
 @class LFDeveloper;
 
 NS_ASSUME_NONNULL_BEGIN

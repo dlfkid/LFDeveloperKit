@@ -8,6 +8,8 @@
 
 #import "NSDictionary+LFCrashHook.h"
 
+#import "LFDeveloperKit.h"
+
 #import "NSObject+HookExtension.h"
 
 @implementation NSDictionary (LFCrashHook)
@@ -31,18 +33,14 @@
         }
         else {
             nKeys[i] = @"";
-#if CRASH_HOOK_ALERT
-            [TCLCrashHookMessager alertWithTitle:@"initialization warning" message:[NSString stringWithFormat:@"nil in dictionary initialization \n Stack : %@", [NSThread callStackSymbols].description]];
-#endif
+            [LFSharedKit printLogWithFormat:@"nil in dictionary initialization \n Stack : %@", [NSThread callStackSymbols].description];
         }
         if (objects[i]) {
             nObjects[i] = objects[i];
         }
         else {
             nObjects[i] = NSNull.null;
-#if CRASH_HOOK_ALERT
-            [TCLCrashHookMessager alertWithTitle:@"initialization warning" message:[NSString stringWithFormat:@"nil in dictionary initialization \n Stack : %@", [NSThread callStackSymbols].description]];
-#endif
+            [LFSharedKit printLogWithFormat:@"nil in dictionary initialization \n Stack : %@", [NSThread callStackSymbols].description];
         }
     }
     

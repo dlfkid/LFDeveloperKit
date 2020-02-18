@@ -8,6 +8,8 @@
 
 #import "NSArray+LFCrashHook.h"
 
+#import "LFDeveloperKit.h"
+
 #import "NSObject+HookExtension.h"
 
 @implementation NSArray (CrashHook)
@@ -75,9 +77,7 @@
         }
         else {
             nObjects[i] = NSNull.null;
-#if CRASH_HOOK_ALERT
-            [TCLCrashHookMessager alertWithTitle:@"initialization warning" message:[NSString stringWithFormat:@"nil in array initialization \n Stack : %@", [NSThread callStackSymbols].description]];
-#endif
+            [LFSharedKit printLogWithFormat:@"nil in array initialization \n Stack : %@", [NSThread callStackSymbols].description];
         }
     }
     return [self ch_initWithObjects:nObjects count:i];
@@ -169,9 +169,7 @@
 }
 
 - (void)showAlertViewWithMethodName:(NSString *)name {
-    #if CRASH_HOOK_ALERT
-    [TCLCrashHookMessager alertWithTitle:NSStringFromClass(self.class) message:[NSString stringWithFormat:@"Method :%@ \n Object Description: %@ \n Stack Description: %@", name, self.description, [NSThread callStackSymbols].description]];
-    #endif
+    [LFSharedKit printLogWithFormat:@"Method :%@ \n Object Description: %@ \n Stack Description: %@", name, self.description, [NSThread callStackSymbols].description];
 }
 
 @end
