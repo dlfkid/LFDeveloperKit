@@ -27,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id <LFDeveloperKitDelegate> delegate;
 
+@property (nonatomic, assign) BOOL arrayCrashHookEnable;
+@property (nonatomic, assign) BOOL dictionaryCrashHookEnable;
+@property (nonatomic, assign) BOOL stringCrashHookEnable;
+
 + (instancetype)sharedInstance;
 
 /// Write a new or exist developer
