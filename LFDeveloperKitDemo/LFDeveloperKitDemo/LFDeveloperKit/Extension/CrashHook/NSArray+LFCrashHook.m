@@ -49,6 +49,9 @@
 }
 
 - (id)ch_objectAtIndex:(NSUInteger)idx {
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_objectAtIndex:idx];
+    }
     if (idx < self.count) {
         return [self ch_objectAtIndex:idx];
     }
@@ -59,6 +62,9 @@
 }
 
 - (id)ch_objectAtIndexedSubscript:(NSUInteger)idx {
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_objectAtIndexedSubscript:idx];
+    }
     if (idx < self.count) {
         return [self ch_objectAtIndexedSubscript:idx];
     }
@@ -69,6 +75,11 @@
 }
 
 - (instancetype)ch_initWithObjects:(const id _Nonnull [_Nullable])objects count:(NSUInteger)cnt {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_initWithObjects:objects count:cnt];
+    }
+    
     id nObjects[cnt];
     int i = 0;
     for (; i < cnt; i++) {
@@ -84,6 +95,11 @@
 }
 
 - (id)ch0_objectAtIndex:(NSUInteger)idx {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch0_objectAtIndex:idx];
+    }
+    
     if (idx < self.count) {
         return [self ch0_objectAtIndex:idx];
     }
@@ -94,6 +110,11 @@
 }
 
 - (id)ch0_objectAtIndexedSubscript:(NSUInteger)idx {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch0_objectAtIndexedSubscript:idx];
+    }
+    
     if (idx < self.count) {
         return [self ch0_objectAtIndexedSubscript:idx];
     }
@@ -104,6 +125,11 @@
 }
 
 - (id)chM_objectAtIndex:(NSUInteger)idx {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self chM_objectAtIndex:idx];
+    }
+    
     if (idx < self.count) {
         return [self chM_objectAtIndex:idx];
     }
@@ -114,6 +140,11 @@
 }
 
 - (id)chM_objectAtIndexedSubscript:(NSUInteger)idx {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self chM_objectAtIndexedSubscript:idx];
+    }
+    
     if (idx < self.count) {
         return [self chM_objectAtIndexedSubscript:idx];
     }
@@ -124,6 +155,11 @@
 }
 
 - (void)ch_addObject:(id)anObject {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_addObject:anObject];
+    }
+    
     if (anObject) {
         return [self ch_addObject:anObject];
     }
@@ -133,6 +169,11 @@
 }
 
 - (void)ch_insertObject:(id)anObject atIndex:(NSUInteger)index {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_insertObject:anObject atIndex:index];
+    }
+    
     if (anObject && index <= self.count) {
         return [self ch_insertObject:anObject atIndex:index];
     }
@@ -142,6 +183,11 @@
 }
 
 - (void)ch_removeObjectAtIndex:(NSUInteger)index {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_removeObjectAtIndex:index];
+    }
+    
     if (index < self.count) {
         return [self ch_removeObjectAtIndex:index];
     }
@@ -151,6 +197,11 @@
 }
 
 - (void)ch_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_replaceObjectAtIndex:index withObject:anObject];
+    }
+    
     if (anObject && index < self.count) {
         return [self ch_replaceObjectAtIndex:index withObject:anObject];
     }
@@ -160,6 +211,11 @@
 }
 
 - (void)ch_setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
+    
+    if (!LFSharedKit.arrayCrashHookEnable) {
+        return [self ch_setObject:obj atIndexedSubscript:idx];
+    }
+    
     if (obj && idx <= self.count) {
         return [self ch_setObject:obj atIndexedSubscript:idx];
     }

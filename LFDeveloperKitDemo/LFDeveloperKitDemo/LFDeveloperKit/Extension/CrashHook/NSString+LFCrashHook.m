@@ -28,6 +28,11 @@
 }
 
 - (NSString *)ch_cfConstant_substringFromIndex:(NSUInteger)from {
+    
+    if (!LFSharedKit.stringCrashHookEnable) {
+        return [self ch_cfConstant_substringFromIndex:from];
+    }
+    
     if (from > self.length) {
         from = self.length;
         [self showAlertViewWithMethodName:NSStringFromSelector(_cmd)];
@@ -35,6 +40,11 @@
     return [self ch_cfConstant_substringFromIndex:from];
 }
 - (NSString *)ch_cfConstant_substringToIndex:(NSUInteger)to {
+    
+    if (!LFSharedKit.stringCrashHookEnable) {
+        return  [self ch_cfConstant_substringToIndex:to];
+    }
+    
     if (to > self.length) {
         to = self.length;
         [self showAlertViewWithMethodName:NSStringFromSelector(_cmd)];
@@ -43,6 +53,11 @@
 }
 
 - (NSString *)ch_cfConstant_substringWithRange:(NSRange)range {
+    
+    if (!LFSharedKit.stringCrashHookEnable) {
+        return [self ch_cfConstant_substringWithRange:range];
+    }
+    
     BOOL isRangeModify = NO;
     if (range.length > self.length) {
         range.length = self.length;
@@ -63,13 +78,24 @@
 }
 
 - (NSString *)ch_taggedPointer_substringFromIndex:(NSUInteger)from {
+    
+    if (!LFSharedKit.stringCrashHookEnable) {
+        return [self ch_taggedPointer_substringFromIndex:from];
+    }
+    
     if (from > self.length) {
         from = self.length;
         [self showAlertViewWithMethodName:NSStringFromSelector(_cmd)];
     }
     return [self ch_taggedPointer_substringFromIndex:from];
 }
+
 - (NSString *)ch_taggedPointer_substringToIndex:(NSUInteger)to {
+    
+    if (!LFSharedKit.stringCrashHookEnable) {
+        return [self ch_taggedPointer_substringToIndex:to];
+    }
+    
     if (to > self.length) {
         to = self.length;
         [self showAlertViewWithMethodName:NSStringFromSelector(_cmd)];
@@ -78,6 +104,11 @@
 }
 
 - (NSString *)ch_taggedPointer_substringWithRange:(NSRange)range {
+    
+    if (!LFSharedKit.stringCrashHookEnable) {
+        return [self ch_taggedPointer_substringWithRange:range];
+    }
+    
     BOOL isRangeModify = NO;
     if (range.length > self.length) {
         range.length = self.length;

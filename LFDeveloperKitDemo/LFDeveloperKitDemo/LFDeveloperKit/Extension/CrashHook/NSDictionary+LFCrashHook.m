@@ -24,6 +24,11 @@
 }
 
 - (instancetype)ch_initWithObjects:(id  _Nonnull const [])objects forKeys:(id<NSCopying>  _Nonnull const [])keys count:(NSUInteger)cnt {
+    
+    if (!LFSharedKit.dictionaryCrashHookEnable) {
+        return [self ch_initWithObjects:objects forKeys:keys count:cnt];
+    }
+    
     id nObjects[cnt];
     id nKeys[cnt];
     int i = 0;
@@ -48,6 +53,11 @@
 }
 
 - (void)ch_setObject:(id)anObject forKey:(id)aKey {
+    
+    if (!LFSharedKit.dictionaryCrashHookEnable) {
+        [self ch_setObject:anObject forKey:aKey];
+    }
+    
     if (anObject && aKey) {
         [self ch_setObject:anObject forKey:aKey];
     }
@@ -57,6 +67,11 @@
 }
 
 - (void)ch_setObject:(nullable id)obj forKeyedSubscript:(id)key {
+    
+    if (!LFSharedKit.dictionaryCrashHookEnable) {
+        [self ch_setObject:obj forKeyedSubscript:key];
+    }
+    
     if (key) {
         [self ch_setObject:obj forKeyedSubscript:key];
     }
@@ -66,9 +81,7 @@
 }
 
 - (void)showAlertViewWithMethodName:(NSString *)name {
-    #if CRASH_HOOK_ALERT
-    [TCLCrashHookMessager alertWithTitle:NSStringFromClass(self.class) message:[NSString stringWithFormat:@"Method :%@ \n Object Description: %@ \n Stack Description: %@", name, self.description, [NSThread callStackSymbols].description]];
-    #endif
+    [LFSharedKit printLogWithFormat:@"Method :%@ \n Object Description: %@ \n Stack Description: %@", name, self.description, [NSThread callStackSymbols].description];
 }
 
 @end
