@@ -10,7 +10,7 @@
 
 #import "LFDeveloperKit.h"
 
-#import "NSObject+HookExtension.h"
+#import "NSObject+Swizzle.h"
 
 
 @implementation NSString (LFCrashHook)

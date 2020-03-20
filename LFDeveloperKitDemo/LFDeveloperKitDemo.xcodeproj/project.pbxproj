@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354E97EC2424B27B00C41E6F /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97EB2424B27B00C41E6F /* NSObject+Swizzle.m */; };
+		354E97F02424B7A200C41E6F /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97EF2424B7A200C41E6F /* NSObject+Description.m */; };
+		354E97F42424BCEC00C41E6F /* NSObject+DeallocCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97F32424BCEC00C41E6F /* NSObject+DeallocCallBack.m */; };
+		354E97F82424BD1600C41E6F /* DeallocCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97F72424BD1600C41E6F /* DeallocCallBack.m */; };
 		356C46DE23F691B1004DADD5 /* LFDeveloper.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46DD23F691B1004DADD5 /* LFDeveloper.m */; };
-		356C46EA23FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46E923FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.m */; };
 		356C46ED23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46EC23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m */; };
 		356C46F123FA9D2A004DADD5 /* NSArray+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46F023FA9D2A004DADD5 /* NSArray+LFCrashHook.m */; };
 		356C46F823FBD11E004DADD5 /* NSString+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46F723FBD11E004DADD5 /* NSString+LFCrashHook.m */; };
@@ -21,14 +24,19 @@
 		35A9287C233E02C4007BE488 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9287B233E02C4007BE488 /* main.m */; };
 		35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92883233E02D7007BE488 /* LFDeveloperKit.m */; };
 		35F345042373B5B700FAED4C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F345022373B58C00FAED4C /* libsqlite3.0.tbd */; };
-		B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		354E97EA2424B27B00C41E6F /* NSObject+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		354E97EB2424B27B00C41E6F /* NSObject+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
+		354E97EE2424B7A200C41E6F /* NSObject+Description.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
+		354E97EF2424B7A200C41E6F /* NSObject+Description.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
+		354E97F22424BCEC00C41E6F /* NSObject+DeallocCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeallocCallBack.h"; sourceTree = "<group>"; };
+		354E97F32424BCEC00C41E6F /* NSObject+DeallocCallBack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeallocCallBack.m"; sourceTree = "<group>"; };
+		354E97F62424BD1600C41E6F /* DeallocCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeallocCallBack.h; sourceTree = "<group>"; };
+		354E97F72424BD1600C41E6F /* DeallocCallBack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeallocCallBack.m; sourceTree = "<group>"; };
 		356C46DC23F691B1004DADD5 /* LFDeveloper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDeveloper.h; sourceTree = "<group>"; };
 		356C46DD23F691B1004DADD5 /* LFDeveloper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDeveloper.m; sourceTree = "<group>"; };
-		356C46E823FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LFDeveloperExtension.h"; sourceTree = "<group>"; };
-		356C46E923FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LFDeveloperExtension.m"; sourceTree = "<group>"; };
 		356C46EB23FA9B84004DADD5 /* NSDictionary+LFCrashHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+LFCrashHook.h"; sourceTree = "<group>"; };
 		356C46EC23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+LFCrashHook.m"; sourceTree = "<group>"; };
 		356C46EF23FA9D2A004DADD5 /* NSArray+LFCrashHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+LFCrashHook.h"; sourceTree = "<group>"; };
@@ -50,8 +58,6 @@
 		35A92882233E02D7007BE488 /* LFDeveloperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDeveloperKit.h; sourceTree = "<group>"; };
 		35A92883233E02D7007BE488 /* LFDeveloperKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDeveloperKit.m; sourceTree = "<group>"; };
 		35F345022373B58C00FAED4C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		B4FADEBC235DB44A000E8ED2 /* NSObject+HookExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HookExtension.h"; sourceTree = "<group>"; };
-		B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HookExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354E97ED2424B75600C41E6F /* Swizzle */ = {
+			isa = PBXGroup;
+			children = (
+				354E97EA2424B27B00C41E6F /* NSObject+Swizzle.h */,
+				354E97EB2424B27B00C41E6F /* NSObject+Swizzle.m */,
+			);
+			path = Swizzle;
+			sourceTree = "<group>";
+		};
+		354E97F12424B84F00C41E6F /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				354E97EE2424B7A200C41E6F /* NSObject+Description.h */,
+				354E97EF2424B7A200C41E6F /* NSObject+Description.m */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
+		354E97F52424BCF200C41E6F /* DeallocCallBack */ = {
+			isa = PBXGroup;
+			children = (
+				354E97F22424BCEC00C41E6F /* NSObject+DeallocCallBack.h */,
+				354E97F32424BCEC00C41E6F /* NSObject+DeallocCallBack.m */,
+				354E97F62424BD1600C41E6F /* DeallocCallBack.h */,
+				354E97F72424BD1600C41E6F /* DeallocCallBack.m */,
+			);
+			path = DeallocCallBack;
+			sourceTree = "<group>";
+		};
 		356C46EE23FA9BC1004DADD5 /* CrashHook */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,11 +181,10 @@
 		B4FADEBF235DB450000E8ED2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B4FADEBC235DB44A000E8ED2 /* NSObject+HookExtension.h */,
-				B4FADEBD235DB44A000E8ED2 /* NSObject+HookExtension.m */,
-				356C46E823FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.h */,
-				356C46E923FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.m */,
+				354E97F12424B84F00C41E6F /* Description */,
+				354E97ED2424B75600C41E6F /* Swizzle */,
 				356C46EE23FA9BC1004DADD5 /* CrashHook */,
+				354E97F52424BCF200C41E6F /* DeallocCallBack */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -225,17 +259,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				354E97EC2424B27B00C41E6F /* NSObject+Swizzle.m in Sources */,
+				354E97F42424BCEC00C41E6F /* NSObject+DeallocCallBack.m in Sources */,
 				356C46DE23F691B1004DADD5 /* LFDeveloper.m in Sources */,
 				356C46F823FBD11E004DADD5 /* NSString+LFCrashHook.m in Sources */,
-				B4FADEBE235DB44A000E8ED2 /* NSObject+HookExtension.m in Sources */,
 				35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */,
 				35A92871233E02C3007BE488 /* ViewController.m in Sources */,
 				356C46ED23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m in Sources */,
 				35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */,
-				356C46EA23FA8D1C004DADD5 /* UIAlertController+LFDeveloperExtension.m in Sources */,
+				354E97F02424B7A200C41E6F /* NSObject+Description.m in Sources */,
 				356C46F123FA9D2A004DADD5 /* NSArray+LFCrashHook.m in Sources */,
 				35A9287C233E02C4007BE488 /* main.m in Sources */,
 				35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */,
+				354E97F82424BD1600C41E6F /* DeallocCallBack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
