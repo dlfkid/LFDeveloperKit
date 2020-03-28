@@ -6,13 +6,13 @@
 //  Copyright © 2020 LeonDeng. All rights reserved.
 //
 
-#import "DeallocCallBack.h"
+#import "DeallocCallBackContainer.h"
 
-@interface DeallocCallBack()
+@interface DeallocCallBackContainer()
 
 @end
 
-@implementation DeallocCallBack
+@implementation DeallocCallBackContainer
 
 - (instancetype)initWithOwner:(id)owner {
     self = [super init];
@@ -24,7 +24,7 @@
     return self;
 }
 
-- (NSUInteger)addSelfCallBack:(DeallocSelfCallback)selfCallBack identifier:(NSInteger)identifier {
+- (NSInteger)addSelfCallBack:(DeallocSelfCallback)selfCallBack identifier:(NSInteger)identifier {
     if (!selfCallBack || identifier <= 0) {
         return 0;
     }
@@ -34,7 +34,7 @@
     return identifier;
 }
 
-- (BOOL)removeCallBackWithIdentifier:(NSUInteger)identifier {
+- (BOOL)removeCallBackWithIdentifier:(NSInteger)identifier {
     if (identifier == 0) {
         return NO;
     }

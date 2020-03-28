@@ -10,7 +10,7 @@
 		354E97EC2424B27B00C41E6F /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97EB2424B27B00C41E6F /* NSObject+Swizzle.m */; };
 		354E97F02424B7A200C41E6F /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97EF2424B7A200C41E6F /* NSObject+Description.m */; };
 		354E97F42424BCEC00C41E6F /* NSObject+DeallocCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97F32424BCEC00C41E6F /* NSObject+DeallocCallBack.m */; };
-		354E97F82424BD1600C41E6F /* DeallocCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97F72424BD1600C41E6F /* DeallocCallBack.m */; };
+		354E97F82424BD1600C41E6F /* DeallocCallBackContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E97F72424BD1600C41E6F /* DeallocCallBackContainer.m */; };
 		356C46DE23F691B1004DADD5 /* LFDeveloper.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46DD23F691B1004DADD5 /* LFDeveloper.m */; };
 		356C46ED23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46EC23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m */; };
 		356C46F123FA9D2A004DADD5 /* NSArray+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46F023FA9D2A004DADD5 /* NSArray+LFCrashHook.m */; };
@@ -33,8 +33,8 @@
 		354E97EF2424B7A200C41E6F /* NSObject+Description.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
 		354E97F22424BCEC00C41E6F /* NSObject+DeallocCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeallocCallBack.h"; sourceTree = "<group>"; };
 		354E97F32424BCEC00C41E6F /* NSObject+DeallocCallBack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeallocCallBack.m"; sourceTree = "<group>"; };
-		354E97F62424BD1600C41E6F /* DeallocCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeallocCallBack.h; sourceTree = "<group>"; };
-		354E97F72424BD1600C41E6F /* DeallocCallBack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeallocCallBack.m; sourceTree = "<group>"; };
+		354E97F62424BD1600C41E6F /* DeallocCallBackContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeallocCallBackContainer.h; sourceTree = "<group>"; };
+		354E97F72424BD1600C41E6F /* DeallocCallBackContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeallocCallBackContainer.m; sourceTree = "<group>"; };
 		356C46DC23F691B1004DADD5 /* LFDeveloper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDeveloper.h; sourceTree = "<group>"; };
 		356C46DD23F691B1004DADD5 /* LFDeveloper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDeveloper.m; sourceTree = "<group>"; };
 		356C46EB23FA9B84004DADD5 /* NSDictionary+LFCrashHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+LFCrashHook.h"; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 			children = (
 				354E97F22424BCEC00C41E6F /* NSObject+DeallocCallBack.h */,
 				354E97F32424BCEC00C41E6F /* NSObject+DeallocCallBack.m */,
-				354E97F62424BD1600C41E6F /* DeallocCallBack.h */,
-				354E97F72424BD1600C41E6F /* DeallocCallBack.m */,
+				354E97F62424BD1600C41E6F /* DeallocCallBackContainer.h */,
+				354E97F72424BD1600C41E6F /* DeallocCallBackContainer.m */,
 			);
 			path = DeallocCallBack;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 				356C46F123FA9D2A004DADD5 /* NSArray+LFCrashHook.m in Sources */,
 				35A9287C233E02C4007BE488 /* main.m in Sources */,
 				35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */,
-				354E97F82424BD1600C41E6F /* DeallocCallBack.m in Sources */,
+				354E97F82424BD1600C41E6F /* DeallocCallBackContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

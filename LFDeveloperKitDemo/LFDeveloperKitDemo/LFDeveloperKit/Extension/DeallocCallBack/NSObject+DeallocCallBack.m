@@ -10,43 +10,85 @@
 
 @import ObjectiveC.runtime;
 
-static dispatch_queue_t _deallocCallbackQueueLock = NULL;
-
 @interface NSObject (DeallockCallBack)
 
-@property (nonatomic, assign) NSInteger defaultIdentifier;
-@property (nonatomic, strong) dispatch_queue_t deallocQueue;
+@property (nonatomic, assign) NSInteger callBackCount;
+@property (nonatomic, strong) dispatch_queue_t deallocBlockManageQueue;
+@property (nonatomic, strong) DeallocCallBackContainer *deallocBlockContainer;
 
 @end
 
 @implementation NSObject (DeallocCallBack)
 
-- (NSInteger)defaultIdentifier {
+- (NSInteger)callBackCount {
     NSNumber *identifier = objc_getAssociatedObject(self, _cmd);
     return identifier.integerValue;
 }
 
-- (void)setDefaultIdentifier:(NSInteger)defaultIdentifier {
-    NSNumber *identifier = @(defaultIdentifier);
+- (void)setCallBackCount:(NSInteger)callBackCount {
+    NSNumber *identifier = @(callBackCount);
     objc_setAssociatedObject(self, _cmd, identifier, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (dispatch_queue_t)deallocQueue {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
+- (dispatch_queue_t)deallocBlockManageQueue {
+    __block dispatch_queue_t queue = nil;
+    dispatch_sync(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        queue = objc_getAssociatedObject(self, _cmd);
+        if (!queue) {
+            NSString *queueName = [NSString stringWithFormat:@"%@.dealloc.callBack.handle", self.class];
+            objc_setAssociatedObject(self, _cmd, queue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            queue = dispatch_queue_create(queueName.UTF8String, DISPATCH_QUEUE_SERIAL);
+        }
     });
+    return queue;
+}
+
+- (DeallocCallBackContainer *)deallocBlockContainer {
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setDeallocQueue:(dispatch_queue_t)deallocQueue {
-    objc_setAssociatedObject(self, _cmd, deallocQueue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setDeallocBlockContainer:(DeallocCallBackContainer *)deallocBlockContainer {
+    objc_setAssociatedObject(self, _cmd, deallocBlockContainer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)willDeallocWithCallBack:(DeallocSelfCallback)callBack {
+- (NSInteger)willDeallocWithCallBack:(DeallocSelfCallback)callBack {
     if (!callBack) {
-        return;
+        return 0;
     }
+    __block DeallocCallBackContainer *callBackContainer = nil;
+    __block NSInteger blockCount = 0;
+    
+    dispatch_sync(self.deallocBlockManageQueue, ^{
+        blockCount = self.callBackCount;
+        blockCount += 1;
+        callBackContainer = self.deallocBlockContainer;
+        if (!callBackContainer) {
+            callBackContainer = [[DeallocCallBackContainer alloc] init];
+            self.deallocBlockContainer = callBackContainer;
+        }
+        if ([callBackContainer addSelfCallBack:callBack identifier:blockCount] > 0) {
+            self.callBackCount = blockCount;
+        }
+    });
+    return blockCount;
+}
+
+- (NSInteger)removeDeallocCallBackWithIdentifier:(NSInteger)identifier {
+    if (identifier <= 0) {
+        return 0;
+    }
+    __block NSInteger blockCount = 0;
+    __block DeallocCallBackContainer *callBackContainer = nil;
+    dispatch_sync(self.deallocBlockManageQueue, ^{
+        blockCount = self.callBackCount;
+        callBackContainer = self.deallocBlockContainer;
+        if (!callBackContainer) {
+            blockCount = 0;
+            return;
+        }
+        blockCount = [callBackContainer removeDeallocCallBackWithIdentifier:identifier];
+    });
+    return blockCount;
 }
 
 @end

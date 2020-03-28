@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "DeallocCallBack.h"
+#import "DeallocCallBackContainer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (DeallocCallBack)
 
-- (void)willDeallocWithCallBack:(DeallocSelfCallback)callBack;
+- (NSInteger)willDeallocWithCallBack:(DeallocSelfCallback)callBack;
+
+- (NSInteger)removeDeallocCallBackWithIdentifier:(NSInteger)identifier;
 
 @end
 
