@@ -10,13 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^DeallocSelfCallback)(__unsafe_unretained id owner, NSInteger identifier);
+typedef void (^DeallocSelfCallback)(id owner, NSInteger identifier);
 
 @interface DeallocCallBackContainer : NSObject
 
 @property (nonatomic, strong) NSLock *lock;
 @property (nonatomic, strong) NSMutableDictionary *callBackDictionary;
-@property (nonatomic, weak) id owner;
+@property (nonatomic, unsafe_unretained) id owner;
+
+- (instancetype)initWithOwner:(id)owner;
 
 - (NSInteger)addSelfCallBack:(DeallocSelfCallback)selfCallBack identifier:(NSInteger)identifier;
 

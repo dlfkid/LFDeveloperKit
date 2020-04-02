@@ -63,7 +63,7 @@
         blockCount += 1;
         callBackContainer = self.deallocBlockContainer;
         if (!callBackContainer) {
-            callBackContainer = [[DeallocCallBackContainer alloc] init];
+            callBackContainer = [[DeallocCallBackContainer alloc] initWithOwner:self];
             self.deallocBlockContainer = callBackContainer;
         }
         if ([callBackContainer addSelfCallBack:callBack identifier:blockCount] > 0) {

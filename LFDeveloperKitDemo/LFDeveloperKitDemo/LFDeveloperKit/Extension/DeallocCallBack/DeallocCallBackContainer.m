@@ -50,10 +50,12 @@
 }
 
 - (void)dealloc {
-    NSArray *allKeys = [[self.callBackDictionary allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    NSDictionary *callBackDict = self.callBackDictionary;
+    NSArray *allKeys = callBackDict.allKeys;
     for (NSNumber *identifier in allKeys) {
         DeallocSelfCallback callBack = self.callBackDictionary[identifier];
-        callBack(_owner, identifier.unsignedIntValue);
+        __strong  typeof(self.owner) weakOwner = self.owner;
+        callBack(weakOwner, identifier.unsignedIntValue);
     }
 }
 

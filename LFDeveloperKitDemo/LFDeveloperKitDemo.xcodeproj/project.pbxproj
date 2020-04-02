@@ -15,6 +15,7 @@
 		356C46ED23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46EC23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m */; };
 		356C46F123FA9D2A004DADD5 /* NSArray+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46F023FA9D2A004DADD5 /* NSArray+LFCrashHook.m */; };
 		356C46F823FBD11E004DADD5 /* NSString+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46F723FBD11E004DADD5 /* NSString+LFCrashHook.m */; };
+		3582EE5324342F80003F0FA8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE5224342F80003F0FA8 /* TestViewController.m */; };
 		35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286A233E02C3007BE488 /* AppDelegate.m */; };
 		35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286D233E02C3007BE488 /* SceneDelegate.m */; };
 		35A92871233E02C3007BE488 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92870233E02C3007BE488 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		356C46F023FA9D2A004DADD5 /* NSArray+LFCrashHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LFCrashHook.m"; sourceTree = "<group>"; };
 		356C46F623FBD11D004DADD5 /* NSString+LFCrashHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+LFCrashHook.h"; sourceTree = "<group>"; };
 		356C46F723FBD11E004DADD5 /* NSString+LFCrashHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+LFCrashHook.m"; sourceTree = "<group>"; };
+		3582EE5124342F80003F0FA8 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		3582EE5224342F80003F0FA8 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		35A92866233E02C3007BE488 /* LFDeveloperKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFDeveloperKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A92869233E02C3007BE488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35A9286A233E02C3007BE488 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				35A9286D233E02C3007BE488 /* SceneDelegate.m */,
 				35A9286F233E02C3007BE488 /* ViewController.h */,
 				35A92870233E02C3007BE488 /* ViewController.m */,
+				3582EE5124342F80003F0FA8 /* TestViewController.h */,
+				3582EE5224342F80003F0FA8 /* TestViewController.m */,
 				35F345082373CB2700FAED4C /* LFLogger */,
 				35A92885233E02DD007BE488 /* LFDeveloperKit */,
 				35A92872233E02C3007BE488 /* Main.storyboard */,
@@ -261,6 +266,7 @@
 			files = (
 				354E97EC2424B27B00C41E6F /* NSObject+Swizzle.m in Sources */,
 				354E97F42424BCEC00C41E6F /* NSObject+DeallocCallBack.m in Sources */,
+				3582EE5324342F80003F0FA8 /* TestViewController.m in Sources */,
 				356C46DE23F691B1004DADD5 /* LFDeveloper.m in Sources */,
 				356C46F823FBD11E004DADD5 /* NSString+LFCrashHook.m in Sources */,
 				35A92884233E02D7007BE488 /* LFDeveloperKit.m in Sources */,
