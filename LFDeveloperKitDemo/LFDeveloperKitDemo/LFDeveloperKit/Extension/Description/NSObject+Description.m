@@ -12,7 +12,7 @@
 
 @implementation NSObject (Description)
 
- - (NSArray <NSString *> *)methodNames {
+ + (NSArray <NSString *> *)methodNames {
     unsigned int count;
     Method *methodList = class_copyMethodList(self, &count);
     NSMutableArray *methodNames = [NSMutableArray array];
