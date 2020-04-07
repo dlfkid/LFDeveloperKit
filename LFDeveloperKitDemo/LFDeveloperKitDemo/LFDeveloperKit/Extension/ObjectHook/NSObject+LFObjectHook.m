@@ -39,7 +39,30 @@ NSMutableDictionary *threadStoredDict(const NSString *const key, NSString *class
     return threadStoredDictForEntry(entryForThreadStoredDict(key, className));
 }
 
+NSString *createSelHeaderString(NSString *str, int index) {
+    return [NSString stringWithFormat:@"__%d_%@", index, str];
+}
+
+SEL createSEL(SEL sel, NSString *str) {
+    NSString *originalSELString = NSStringFromSelector(sel);
+    NSString *newSELString = [NSString stringWithFormat:@"%@_LF_%@", str, originalSELString];
+    return NSSelectorFromString(newSELString);
+}
+
+SEL createSELA(SEL sel, int index) {
+    return createSEL(sel, createSelHeaderString(@"A", index));
+}
+
+SEL createSELB(SEL sel, int index) {
+    return createSEL(sel, createSelHeaderString(@"B", index));
+}
+
 @implementation NSObject (LFObjectHook)
+
+- (void)callOriginalMethodInBlock:(OriginalMethodBlock)block {
+    [self setOriginalCallFlag:YES];
+    block();
+}
 
 - (void)hookMethod:(SEL)sel Identifier:(NSString *)identifier ImplementationBlock:(id)implementationBlock {
     pthread_rwlock_wrlock(&([self hookLock]->_rw_lock3));
@@ -69,7 +92,69 @@ NSMutableDictionary *threadStoredDict(const NSString *const key, NSString *class
         objc_registerClassPair(newClass);
         LFObjectHookContainer *container = [self hookContainer];
         container.className = newClassName;
+        [container.classes addObject:newClass];
+        container.onClassDisposal = ^{
+            NSThread *mainThread  = [NSThread mainThread];
+            NSArray *keys = @[kCurrentCallIndexDictKey, kOriginalCallFlagDictKey, kDebugOriginalCallDictKey, kKeyForOriginalCallFlag];
+            NSMutableDictionary *dict = mainThread.threadDictionary;
+            [keys enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (![dict valueForKey:entryForThreadStoredDict(key, newClassName)]) {
+                    *stop = YES;
+                    return;
+                }
+                [dict removeObjectForKey:entryForThreadStoredDict(key, newClassName)];
+            }];
+        };
     }
+    if (!newClass) {
+        return;
+    }
+    NSAssert(method != NULL, ([NSString stringWithFormat:@"The Selector `%@` may be wrong, please check it!", selName]));
+    IMP originalImplenmentation = method_getImplementation(method);
+    const char *types = method_getTypeEncoding(method);
+    IMP msgForwardIMP = _objc_msgForward;
+#if !defined(__arm64__)
+    if (types[0] == '{') {
+        NSMethodSignature *methodSignature = [NSMethodSignature signatureWithObjCTypes:types];
+        if ([methodSignature.debugDescription rangeOfString:@"is special struct return? YES"].location != NSNotFound) {
+            msgForwardIMP = (IMP)_objc_msgForward_stret;
+        }
+    }
+#endif
+    int headerStringCount = resetTimers + 1;
+    if (originalImplenmentation != msgForwardIMP) {
+        class_addMethod(newClass, sel, msgForwardIMP, types);
+        SEL selB = createSELB(sel, headerStringCount);
+        NSString *strSELB = NSStringFromSelector(selB);
+        class_addMethod(newClass, selB, originalImplenmentation, types);
+        [container addSelValue:NSStringFromSelector(selB) forMainKey:selName subKey:strSELB];
+        object_setClass(self, newClass);
+    }
+    
+    IMP impA = imp_implementationWithBlock(implementationBlock);
+    SEL selA = createSELA(sel, headerStringCount);
+    class_addMethod(newClass, selA, impA, types);
+    if (!identifier) {
+        identifier = [NSString stringWithFormat:@"%@_%@_%d", newClassName, selName, resetTimers];
+    }
+    NSString *stringSelA = NSStringFromSelector(selA);
+    [container addSelValue:stringSelA forMainKey:selName subKey:identifier];
+    [container.selSet addObject:selName];
+    [self setResetCount:headerStringCount Sel:sel];
+    [self setCurrentCallIndex:(int)[container.selOrderedDict objectArrayForKey:selName].count - 1 forSel:sel];
+    pthread_rwlock_unlock(&[self hookLock]->_rw_lock3);
+    return;
+}
+
+- (void)unhookMethod:(SEL)sel Identifier:(NSString *)Identifier {
+    LFObjectHookContainer *container = [self hookContainer];
+    NSString *subKey = Identifier;
+    NSString *selString = container.selBlockDict[NSStringFromSelector(sel)][subKey];
+    [container deleteSelValue:selString forMainKey:NSStringFromSelector(sel) subKey:subKey];
+}
+
+- (void)setResetCount:(int)count Sel:(SEL)sel {
+    [[self hookContainer].resetCountDict setValue:@(count) forKey:NSStringFromSelector(sel)];
 }
 
 - (int)resetCountForSel:(SEL)sel {
