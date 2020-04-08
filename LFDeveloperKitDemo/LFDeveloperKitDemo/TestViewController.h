@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)testPrint;
 
+- (void)testPrintWithParameterInteger:(NSInteger)integer NSString:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END

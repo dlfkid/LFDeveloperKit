@@ -17,9 +17,9 @@
 		356C46F823FBD11E004DADD5 /* NSString+LFCrashHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 356C46F723FBD11E004DADD5 /* NSString+LFCrashHook.m */; };
 		3582EE5324342F80003F0FA8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE5224342F80003F0FA8 /* TestViewController.m */; };
 		3582EE562436DC4A003F0FA8 /* LFObjectHookContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE552436DC4A003F0FA8 /* LFObjectHookContainer.m */; };
-		3582EE5A2436DC69003F0FA8 /* LFObjectHookLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE592436DC69003F0FA8 /* LFObjectHookLock.m */; };
 		3582EE5D2436DCA7003F0FA8 /* NSObject+LFObjectHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE5C2436DCA7003F0FA8 /* NSObject+LFObjectHook.m */; };
 		3582EE6024370FAB003F0FA8 /* LFOrderedDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE5F24370FAB003F0FA8 /* LFOrderedDict.m */; };
+		359DF876243DA2D400C46FE2 /* LFHookLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 359DF875243DA2D400C46FE2 /* LFHookLock.m */; };
 		35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286A233E02C3007BE488 /* AppDelegate.m */; };
 		35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286D233E02C3007BE488 /* SceneDelegate.m */; };
 		35A92871233E02C3007BE488 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A92870233E02C3007BE488 /* ViewController.m */; };
@@ -52,12 +52,12 @@
 		3582EE5224342F80003F0FA8 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3582EE542436DC4A003F0FA8 /* LFObjectHookContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFObjectHookContainer.h; sourceTree = "<group>"; };
 		3582EE552436DC4A003F0FA8 /* LFObjectHookContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFObjectHookContainer.m; sourceTree = "<group>"; };
-		3582EE582436DC69003F0FA8 /* LFObjectHookLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFObjectHookLock.h; sourceTree = "<group>"; };
-		3582EE592436DC69003F0FA8 /* LFObjectHookLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFObjectHookLock.m; sourceTree = "<group>"; };
 		3582EE5B2436DCA7003F0FA8 /* NSObject+LFObjectHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LFObjectHook.h"; sourceTree = "<group>"; };
 		3582EE5C2436DCA7003F0FA8 /* NSObject+LFObjectHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LFObjectHook.m"; sourceTree = "<group>"; };
 		3582EE5E24370FAB003F0FA8 /* LFOrderedDict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFOrderedDict.h; sourceTree = "<group>"; };
 		3582EE5F24370FAB003F0FA8 /* LFOrderedDict.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFOrderedDict.m; sourceTree = "<group>"; };
+		359DF874243DA2D400C46FE2 /* LFHookLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHookLock.h; sourceTree = "<group>"; };
+		359DF875243DA2D400C46FE2 /* LFHookLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHookLock.m; sourceTree = "<group>"; };
 		35A92866233E02C3007BE488 /* LFDeveloperKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFDeveloperKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A92869233E02C3007BE488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35A9286A233E02C3007BE488 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,10 +134,10 @@
 			children = (
 				3582EE542436DC4A003F0FA8 /* LFObjectHookContainer.h */,
 				3582EE552436DC4A003F0FA8 /* LFObjectHookContainer.m */,
-				3582EE582436DC69003F0FA8 /* LFObjectHookLock.h */,
-				3582EE592436DC69003F0FA8 /* LFObjectHookLock.m */,
 				3582EE5E24370FAB003F0FA8 /* LFOrderedDict.h */,
 				3582EE5F24370FAB003F0FA8 /* LFOrderedDict.m */,
+				359DF874243DA2D400C46FE2 /* LFHookLock.h */,
+				359DF875243DA2D400C46FE2 /* LFHookLock.m */,
 				3582EE5B2436DCA7003F0FA8 /* NSObject+LFObjectHook.h */,
 				3582EE5C2436DCA7003F0FA8 /* NSObject+LFObjectHook.m */,
 			);
@@ -292,8 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3582EE5A2436DC69003F0FA8 /* LFObjectHookLock.m in Sources */,
 				354E97EC2424B27B00C41E6F /* NSObject+Swizzle.m in Sources */,
+				359DF876243DA2D400C46FE2 /* LFHookLock.m in Sources */,
 				3582EE5D2436DCA7003F0FA8 /* NSObject+LFObjectHook.m in Sources */,
 				354E97F42424BCEC00C41E6F /* NSObject+DeallocCallBack.m in Sources */,
 				3582EE5324342F80003F0FA8 /* TestViewController.m in Sources */,

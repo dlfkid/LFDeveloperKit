@@ -31,4 +31,8 @@
     NSLog(@"Run instance method");
 }
 
+- (void)testPrintWithParameterInteger:(NSInteger)integer NSString:(NSString *)string {
+    NSLog(@"Parameter Integer: %ld | String %@", integer, string);
+}
+
 @end

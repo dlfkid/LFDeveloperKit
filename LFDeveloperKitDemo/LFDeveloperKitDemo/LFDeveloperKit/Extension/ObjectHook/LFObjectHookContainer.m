@@ -21,7 +21,6 @@
     self = [super init];
     if (self) {
         _randomFlag = arc4random_uniform(99999999);
-        _resetCountDict = [NSMutableDictionary dictionary];
         _selSet = [NSMutableSet set];
         _selBlockDict = [[NSMutableDictionary alloc] init];
         _selOrderedDict = [[LFOrderedDict alloc] init];
@@ -49,13 +48,13 @@
     });
 }
 
-- (void)addSelValue:(NSString *)value forMainKey:(NSString *)selStr subKey:(NSString *)strId {
-    [_selBlockDict setObject:@{strId: value} forKey:selStr];
+- (void)addSelValue:(NSString *)value forMainKey:(NSString *)selStr {
+    [_selBlockDict setObject:value forKey:selStr];
     [_selOrderedDict setObject:value forKey:selStr];
 }
 
-- (void)deleteSelValue:(NSString *)value forMainKey:(NSString *)selStr subKey:(NSString *)strId {
-    [_selBlockDict setObject:@{strId: @""} forKey:selStr];
+- (void)deleteSelValue:(NSString *)value forMainKey:(NSString *)selStr {
+    [_selBlockDict removeObjectForKey:selStr];
     [_selOrderedDict removeObject:value forKey:selStr];
 }
 

@@ -44,7 +44,7 @@
 }
 
 - (NSArray *)objectArrayForKey:(NSString *)key {
-    return [_dict[key] copy];
+    return _dict[key];
 }
 
 @end
