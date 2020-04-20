@@ -19,6 +19,7 @@
 		3582EE562436DC4A003F0FA8 /* LFObjectHookContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE552436DC4A003F0FA8 /* LFObjectHookContainer.m */; };
 		3582EE5D2436DCA7003F0FA8 /* NSObject+LFObjectHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE5C2436DCA7003F0FA8 /* NSObject+LFObjectHook.m */; };
 		3582EE6024370FAB003F0FA8 /* LFOrderedDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 3582EE5F24370FAB003F0FA8 /* LFOrderedDict.m */; };
+		35841DD4244D43AD003CB7E6 /* NSObject+LFKVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35841DD3244D43AD003CB7E6 /* NSObject+LFKVOBlock.m */; };
 		359DF876243DA2D400C46FE2 /* LFHookLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 359DF875243DA2D400C46FE2 /* LFHookLock.m */; };
 		35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286A233E02C3007BE488 /* AppDelegate.m */; };
 		35A9286E233E02C3007BE488 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A9286D233E02C3007BE488 /* SceneDelegate.m */; };
@@ -56,6 +57,8 @@
 		3582EE5C2436DCA7003F0FA8 /* NSObject+LFObjectHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LFObjectHook.m"; sourceTree = "<group>"; };
 		3582EE5E24370FAB003F0FA8 /* LFOrderedDict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFOrderedDict.h; sourceTree = "<group>"; };
 		3582EE5F24370FAB003F0FA8 /* LFOrderedDict.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFOrderedDict.m; sourceTree = "<group>"; };
+		35841DD2244D43AD003CB7E6 /* NSObject+LFKVOBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LFKVOBlock.h"; sourceTree = "<group>"; };
+		35841DD3244D43AD003CB7E6 /* NSObject+LFKVOBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LFKVOBlock.m"; sourceTree = "<group>"; };
 		359DF874243DA2D400C46FE2 /* LFHookLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHookLock.h; sourceTree = "<group>"; };
 		359DF875243DA2D400C46FE2 /* LFHookLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHookLock.m; sourceTree = "<group>"; };
 		35A92866233E02C3007BE488 /* LFDeveloperKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFDeveloperKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +147,15 @@
 			path = ObjectHook;
 			sourceTree = "<group>";
 		};
+		35841DD5244D43B3003CB7E6 /* BlockBasedKVO */ = {
+			isa = PBXGroup;
+			children = (
+				35841DD2244D43AD003CB7E6 /* NSObject+LFKVOBlock.h */,
+				35841DD3244D43AD003CB7E6 /* NSObject+LFKVOBlock.m */,
+			);
+			path = BlockBasedKVO;
+			sourceTree = "<group>";
+		};
 		35A9285D233E02C3007BE488 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 				356C46EE23FA9BC1004DADD5 /* CrashHook */,
 				354E97F52424BCF200C41E6F /* DeallocCallBack */,
 				3582EE572436DC51003F0FA8 /* ObjectHook */,
+				35841DD5244D43B3003CB7E6 /* BlockBasedKVO */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -303,6 +316,7 @@
 				35A92871233E02C3007BE488 /* ViewController.m in Sources */,
 				356C46ED23FA9B84004DADD5 /* NSDictionary+LFCrashHook.m in Sources */,
 				35A9286B233E02C3007BE488 /* AppDelegate.m in Sources */,
+				35841DD4244D43AD003CB7E6 /* NSObject+LFKVOBlock.m in Sources */,
 				3582EE6024370FAB003F0FA8 /* LFOrderedDict.m in Sources */,
 				354E97F02424B7A200C41E6F /* NSObject+Description.m in Sources */,
 				356C46F123FA9D2A004DADD5 /* NSArray+LFCrashHook.m in Sources */,
